@@ -18,37 +18,41 @@
 <body>
     <div id="ResultTable">
         <script>
-            debugger
-            dataValue = '@Html.Raw(Json.Encode(Model))';
-            alert(dataValue)
+            dataValue = @Html.Raw(Json.Encode(Model));
             configuration = {
                 data: dataValue,
                 colHeaders: ['Employee Id', 'Name','Designation','isPunctual', 'Performance', 'Mobile', 'CTC', 'DOJ'],
-                rowHeaders: ['.', '.', '.'],
                 columns: [
                     {
+                        data: 'empId',
                         type: 'numeric',
                     },
                         {
-
+                            data: 'name'
                         },
                         {
+                            data: 'designation',
                             type: 'autocomplete',
                             source: ['Software Developer', 'Tester', 'Implementation', 'Support']
                         },
                         {
+                            data: 'isPunctual',
                             type: 'checkbox'
                         },
                         {
+                            data: 'performance',
                             type: 'dropdown',
                             source: ['Best', 'Good', 'Worst']
                         },
                         {
+                            data:'mobile',
                             type: 'numeric'
                         },
                         {
+                            data:'ctc'
                         },
                         {
+                            data:'doj',
                             type: 'date',
                             dateFormate: 'DD/MM/YYYY'
                         }
